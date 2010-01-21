@@ -1,0 +1,2 @@
+class Collector < Agent
+end

@@ -1,0 +1,2 @@
+class Trader < Agent
+end
