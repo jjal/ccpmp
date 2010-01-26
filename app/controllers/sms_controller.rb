@@ -24,6 +24,30 @@ class SmsController < ApplicationController
   end
 
   def price
+    queryparms = params[:body].split(/\w+/)
+
+    if(queryparms.length > 3)
+      #TODO: error, there should only be three parameters
+    end
+
+    commodity = Commodity.find(:first, :conditions => {:code => queryparms[1]})
+    mark = Market.find(:first, :conditions => {:code => queryparms[2]})
+    
+    if(commodity.nil?)
+      #TODO error
+    end
+    if(mark.nil?)
+      #TODO error
+    end
+
+    price = Price.find(:first, :conditions => {:commodity_id => commodity.id, :market_id => mark.id})
+    
+    @markcode = mark.code
+    @price = price.amount
+    @commcode = commodity.code
+    @pdate = price.created_at.strftime("%d/%m/%Y %H:%M")
+
+    render :layout => 'blank'
   end
 
   def input
