@@ -3,7 +3,7 @@ require "mysql"
 
 class SmsController < ApplicationController
   #interprets and delegates
-  def message
+  def index
     modkey = CGI.unescapeHTML(params[:body])[/^\s*([A-Za-z]+)\b/].downcase
     
     case modkey
