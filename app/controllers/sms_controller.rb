@@ -1,30 +1,28 @@
+require "rubygems"
+require "mysql"
+
 class SmsController < ApplicationController
   #interprets and delegates
   def message
-    modkey = CGI.unescapeHTML(params[:body])
-    if(modkey =~ /^\w*([A-Za-z]+)\b(.+)$/)
-      modkey = $1.downcase
-    else
-      modkey = nil
-    end
-
+    modkey = CGI.unescapeHTML(params[:body])[/^\s*([A-Za-z]+)\b/].downcase
+    
     case modkey
     when 'xr'
-      redirect_to :action => 'currency'
+      redirect_to :action => 'currency', :body => params[:body]
     when 'pr'
-      redirect_to :action => 'price'
+      redirect_to :action => 'price', :body => params[:body]
     when 'w'
-      redirect_to :action => 'weather'
+      redirect_to :action => 'weather', :body => params[:body]
     when 't'
-      redirect_to :action => 'trader'
+      redirect_to :action => 'trader', :body => params[:body]
     when 'c'
-      redirect_to :action => 'collector'
+      redirect_to :action => 'collector', :body => params[:body]
     end
     #TODO: return some error code
   end
 
   def price
-    queryparms = params[:body].split(/\w+/)
+    queryparms = params[:body].scan(/\w+/)
 
     if(queryparms.length > 3)
       #TODO: error, there should only be three parameters
@@ -47,7 +45,8 @@ class SmsController < ApplicationController
     @commcode = commodity.code
     @pdate = price.created_at.strftime("%d/%m/%Y %H:%M")
 
-    render :layout => 'blank'
+    #for now, just render the message view
+    render :template=>'price/sms', :layout => 'blank'
   end
 
   def input

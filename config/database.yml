@@ -18,11 +18,11 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: infomopticon_development
+  database: ccpmp_development
   pool: 5
-  username: root
-  password: kiny31
-  socket: /var/run/mysqld/mysqld.sock
+  username: ccpmp
+  password: ccpmp!1
+  host: kinyei.org
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -31,18 +31,18 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: infomopticon_test
+  database: ccpmp_development
   pool: 5
-  username: root
-  password: kiny31
-  socket: /var/run/mysqld/mysqld.sock
+  username: ccpmp
+  password: ccpmp!1
+  host: kinyei.org
 
 production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: infomopticon_production
+  database: ccpmp_development
   pool: 5
-  username: root
-  password: kiny31
+  username: ccpmp
+  password: ccpmp!1
   socket: /var/run/mysqld/mysqld.sock
