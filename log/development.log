@@ -333,3 +333,1423 @@ Processing SmsController#price (for 127.0.0.1 at 2010-01-26 16:25:05) [GET]
 Rendering template within layouts/blank
 Rendering price/sms
 Completed in 1833ms (View: 18, DB: 2380) | 200 OK [http://localhost/sms/price?body=PR+M+PP]
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateExchangeRates (20091218091507)
+Migrating to CreatePrices (20091218091526)
+Migrating to CreateWeatherForecasts (20091218091538)
+Migrating to CreateCommodities (20091218092924)
+Migrating to CreateMarkets (20091218092937)
+Migrating to CreateProvinces (20100118075342)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'provinces' already exists: CREATE TABLE `provinces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (306.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (307.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+  [4;36;1mSQL (304.0ms)[0m   [0;1mdescribe `agents`[0m
+  [4;35;1mSQL (305.0ms)[0m   [0mSHOW KEYS FROM `agents`[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mSQL (317.0ms)[0m   [0mdescribe `commodities`[0m
+  [4;36;1mSQL (304.0ms)[0m   [0;1mSHOW KEYS FROM `commodities`[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mdescribe `markets`[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mSHOW KEYS FROM `markets`[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mSHOW FIELDS FROM `prices`[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mdescribe `prices`[0m
+  [4;36;1mSQL (308.0ms)[0m   [0;1mSHOW KEYS FROM `prices`[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mdescribe `provinces`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSHOW KEYS FROM `provinces`[0m
+  [4;36;1mSQL (299.0ms)[0m   [0;1mSHOW FIELDS FROM `weather_forecasts`[0m
+  [4;35;1mSQL (298.0ms)[0m   [0mdescribe `weather_forecasts`[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mSHOW KEYS FROM `weather_forecasts`[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-28 22:36:06) [GET]
+  Parameters: {"body"=>"xr AUD USD 1"}
+Redirected to http://localhost:19049/sms/currency?body=xr+AUD+USD+1
+Completed in 3ms (DB: 596) | 302 Found [http://localhost/sms/?body=xr%20AUD%20USD%201]
+  [4;36;1mSQL (292.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (332.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:36:09) [GET]
+  Parameters: {"body"=>"xr AUD USD 1"}
+  [4;36;1mExchangeRate Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'ccpmp_development.exchange_rates' doesn't exist: SHOW FIELDS FROM `exchange_rates`[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'ccpmp_development.exchange_rates' doesn't exist: SHOW FIELDS FROM `exchange_rates`):
+  app/controllers/sms_controller.rb:69:in `currency'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (435.0ms)
+Rendered rescues/_request_and_response (10.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (298.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Unknown table 'exchange_rates': DROP TABLE `exchange_rates`[0m
+  [4;36;1mSQL (306.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (312.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (302.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (865.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (308.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+  [4;36;1mSQL (302.0ms)[0m   [0;1mdescribe `agents`[0m
+  [4;35;1mSQL (304.0ms)[0m   [0mSHOW KEYS FROM `agents`[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mdescribe `commodities`[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mSHOW KEYS FROM `commodities`[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mdescribe `markets`[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mSHOW KEYS FROM `markets`[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mSHOW FIELDS FROM `prices`[0m
+  [4;35;1mSQL (301.0ms)[0m   [0mdescribe `prices`[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mSHOW KEYS FROM `prices`[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mdescribe `provinces`[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mSHOW KEYS FROM `provinces`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSHOW FIELDS FROM `weather_forecasts`[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mdescribe `weather_forecasts`[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mSHOW KEYS FROM `weather_forecasts`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mdescribe `agents`[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSHOW KEYS FROM `agents`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mdescribe `commodities`[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mSHOW KEYS FROM `commodities`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mSQL (302.0ms)[0m   [0;1mdescribe `markets`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSHOW KEYS FROM `markets`[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mSHOW FIELDS FROM `prices`[0m
+  [4;35;1mSQL (305.0ms)[0m   [0mdescribe `prices`[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mSHOW KEYS FROM `prices`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mdescribe `provinces`[0m
+  [4;35;1mSQL (306.0ms)[0m   [0mSHOW KEYS FROM `provinces`[0m
+  [4;36;1mSQL (311.0ms)[0m   [0;1mSHOW FIELDS FROM `weather_forecasts`[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mdescribe `weather_forecasts`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSHOW KEYS FROM `weather_forecasts`[0m
+  [4;36;1mSQL (305.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (305.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateExchangeRates (20091218091507)
+Migrating to CreatePrices (20091218091526)
+Migrating to CreateWeatherForecasts (20091218091538)
+Migrating to CreateCommodities (20091218092924)
+Migrating to CreateMarkets (20091218092937)
+Migrating to CreateProvinces (20100118075342)
+  [4;36;1mSQL (504.0ms)[0m   [0;1mCREATE TABLE `provinces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (305.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118075342')[0m
+Migrating to CreateAgents (20100121115437)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'agents' already exists: CREATE TABLE `agents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (309.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateExchangeRates (20091218091507)
+Migrating to CreatePrices (20091218091526)
+Migrating to CreateWeatherForecasts (20091218091538)
+Migrating to CreateCommodities (20091218092924)
+Migrating to CreateMarkets (20091218092937)
+Migrating to CreateProvinces (20100118075342)
+Migrating to CreateAgents (20100121115437)
+  [4;36;1mSQL (305.0ms)[0m   [0;1mCREATE TABLE `agents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100121115437')[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (315.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+  [4;36;1mSQL (302.0ms)[0m   [0;1mdescribe `agents`[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mSHOW KEYS FROM `agents`[0m
+  [4;36;1mSQL (311.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mSQL (309.0ms)[0m   [0mdescribe `commodities`[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mSHOW KEYS FROM `commodities`[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mdescribe `markets`[0m
+  [4;35;1mSQL (298.0ms)[0m   [0mSHOW KEYS FROM `markets`[0m
+  [4;36;1mSQL (307.0ms)[0m   [0;1mSHOW FIELDS FROM `prices`[0m
+  [4;35;1mSQL (301.0ms)[0m   [0mdescribe `prices`[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mSHOW KEYS FROM `prices`[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+  [4;36;1mSQL (304.0ms)[0m   [0;1mdescribe `provinces`[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mSHOW KEYS FROM `provinces`[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mSHOW FIELDS FROM `weather_forecasts`[0m
+  [4;35;1mSQL (309.0ms)[0m   [0mdescribe `weather_forecasts`[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mSHOW KEYS FROM `weather_forecasts`[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePrices (20091218091526)
+Migrating to CreateWeatherForecasts (20091218091538)
+Migrating to CreateCommodities (20091218092924)
+Migrating to CreateMarkets (20091218092937)
+Migrating to CreateProvinces (20100118075342)
+Migrating to CreateAgents (20100121115437)
+Migrating to CreateExchangeRates (20100128121615)
+  [4;36;1mSQL (326.0ms)[0m   [0;1mCREATE TABLE `exchange_rates` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `base_currency` varchar(255), `currency` varchar(255), `rate` float, `issued_on` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100128121615')[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mdescribe `agents`[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mSHOW KEYS FROM `agents`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mdescribe `commodities`[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mSHOW KEYS FROM `commodities`[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mdescribe `exchange_rates`[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mSHOW KEYS FROM `exchange_rates`[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mdescribe `markets`[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mSHOW KEYS FROM `markets`[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mSHOW FIELDS FROM `prices`[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mdescribe `prices`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSHOW KEYS FROM `prices`[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mdescribe `provinces`[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mSHOW KEYS FROM `provinces`[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSHOW FIELDS FROM `weather_forecasts`[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mdescribe `weather_forecasts`[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mSHOW KEYS FROM `weather_forecasts`[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:47:15) [GET]
+  Parameters: {"body"=>"xr AUD USD 1"}
+  [4;35;1mExchangeRate Columns (295.0ms)[0m   [0mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;36;1mExchangeRate Load (295.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` [0m
+  [4;36;1mExchangeRate Load (296.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (317.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:18', NULL, NULL, 'EUR', 'EUR', '2010-01-28 12:17:18')[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 1.0, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:19' WHERE `id` = 1[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (293.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:20', NULL, NULL, 'EUR', 'USD', '2010-01-28 12:17:20')[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (295.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 1.4072, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:21' WHERE `id` = 2[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'JPY') LIMIT 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (295.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:22', NULL, NULL, 'EUR', 'JPY', '2010-01-28 12:17:22')[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 125.95, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:23' WHERE `id` = 3[0m
+  [4;36;1mSQL (316.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BGN') LIMIT 1[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (294.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:25', NULL, NULL, 'EUR', 'BGN', '2010-01-28 12:17:25')[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (290.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (301.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 1.9558, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:25' WHERE `id` = 4[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (301.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CZK') LIMIT 1[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (295.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:27', NULL, NULL, 'EUR', 'CZK', '2010-01-28 12:17:27')[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (293.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 26.113, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:27' WHERE `id` = 5[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (299.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'DKK') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (294.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:29', NULL, NULL, 'EUR', 'DKK', '2010-01-28 12:17:29')[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 7.445, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:30' WHERE `id` = 6[0m
+  [4;35;1mSQL (301.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EEK') LIMIT 1[0m
+  [4;35;1mSQL (290.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (297.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:31', NULL, NULL, 'EUR', 'EEK', '2010-01-28 12:17:31')[0m
+  [4;35;1mSQL (316.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 15.6466, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:32' WHERE `id` = 7[0m
+  [4;36;1mSQL (367.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (298.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'GBP') LIMIT 1[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (293.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:33', NULL, NULL, 'EUR', 'GBP', '2010-01-28 12:17:33')[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (303.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 0.86725, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:34' WHERE `id` = 8[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HUF') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (298.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:35', NULL, NULL, 'EUR', 'HUF', '2010-01-28 12:17:35')[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (297.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 271.75, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:36' WHERE `id` = 9[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (301.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LTL') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (295.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:37', NULL, NULL, 'EUR', 'LTL', '2010-01-28 12:17:37')[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 3.4528, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:38' WHERE `id` = 10[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LVL') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (295.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:39', NULL, NULL, 'EUR', 'LVL', '2010-01-28 12:17:39')[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (297.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 0.7079, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:40' WHERE `id` = 11[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (295.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PLN') LIMIT 1[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (295.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:41', NULL, NULL, 'EUR', 'PLN', '2010-01-28 12:17:41')[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (300.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 4.0808, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:42' WHERE `id` = 12[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (304.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RON') LIMIT 1[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (297.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:43', NULL, NULL, 'EUR', 'RON', '2010-01-28 12:17:43')[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (296.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 4.1148, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:44' WHERE `id` = 13[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (300.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SEK') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (296.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:45', NULL, NULL, 'EUR', 'SEK', '2010-01-28 12:17:45')[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (303.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 10.2446, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:46' WHERE `id` = 14[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CHF') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (293.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:47', NULL, NULL, 'EUR', 'CHF', '2010-01-28 12:17:47')[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 1.4721, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:48' WHERE `id` = 15[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (298.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NOK') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (298.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:50', NULL, NULL, 'EUR', 'NOK', '2010-01-28 12:17:50')[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (293.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 8.2195, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:50' WHERE `id` = 16[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (296.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HRK') LIMIT 1[0m
+  [4;35;1mSQL (298.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (294.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:52', NULL, NULL, 'EUR', 'HRK', '2010-01-28 12:17:52')[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 7.316, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:52' WHERE `id` = 17[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RUB') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (296.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:54', NULL, NULL, 'EUR', 'RUB', '2010-01-28 12:17:54')[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (290.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 42.615, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:55' WHERE `id` = 18[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'TRY') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (306.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:56', NULL, NULL, 'EUR', 'TRY', '2010-01-28 12:17:56')[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (304.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (296.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 2.1006, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:57' WHERE `id` = 19[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (298.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (300.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:17:58', NULL, NULL, 'EUR', 'AUD', '2010-01-28 12:17:58')[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (293.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 1.5656, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:17:59' WHERE `id` = 20[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (295.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BRL') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (293.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:00', NULL, NULL, 'EUR', 'BRL', '2010-01-28 12:18:00')[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 2.5991, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:01' WHERE `id` = 21[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CAD') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (297.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:02', NULL, NULL, 'EUR', 'CAD', '2010-01-28 12:18:02')[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (300.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 1.4973, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:03' WHERE `id` = 22[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (295.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CNY') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (295.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:04', NULL, NULL, 'EUR', 'CNY', '2010-01-28 12:18:04')[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (299.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (302.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 9.6067, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:05' WHERE `id` = 23[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (303.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HKD') LIMIT 1[0m
+  [4;36;1mSQL (308.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (294.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:06', NULL, NULL, 'EUR', 'HKD', '2010-01-28 12:18:06')[0m
+  [4;36;1mSQL (302.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (369.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 10.9422, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:07' WHERE `id` = 24[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (317.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'IDR') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (320.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:08', NULL, NULL, 'EUR', 'IDR', '2010-01-28 12:18:08')[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (318.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (297.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 13261.49, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:09' WHERE `id` = 25[0m
+  [4;36;1mSQL (316.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (299.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'INR') LIMIT 1[0m
+  [4;36;1mSQL (323.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (295.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:10', NULL, NULL, 'EUR', 'INR', '2010-01-28 12:18:10')[0m
+  [4;36;1mSQL (307.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (318.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 65.153, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:11' WHERE `id` = 26[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (331.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'KRW') LIMIT 1[0m
+  [4;35;1mSQL (321.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (295.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:13', NULL, NULL, 'EUR', 'KRW', '2010-01-28 12:18:13')[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 1632.22, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:14' WHERE `id` = 27[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (299.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MXN') LIMIT 1[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (299.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:15', NULL, NULL, 'EUR', 'MXN', '2010-01-28 12:18:15')[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (298.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 18.1304, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:16' WHERE `id` = 28[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (306.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MYR') LIMIT 1[0m
+  [4;35;1mSQL (308.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (294.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:17', NULL, NULL, 'EUR', 'MYR', '2010-01-28 12:18:17')[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 4.8158, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:18' WHERE `id` = 29[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (298.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NZD') LIMIT 1[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (296.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:19', NULL, NULL, 'EUR', 'NZD', '2010-01-28 12:18:19')[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (306.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 1.9866, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:20' WHERE `id` = 30[0m
+  [4;35;1mSQL (298.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (305.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PHP') LIMIT 1[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (301.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:21', NULL, NULL, 'EUR', 'PHP', '2010-01-28 12:18:21')[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (310.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 65.702, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:22' WHERE `id` = 31[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (316.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SGD') LIMIT 1[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (297.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:23', NULL, NULL, 'EUR', 'SGD', '2010-01-28 12:18:23')[0m
+  [4;36;1mSQL (410.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (298.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 1.9761, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:24' WHERE `id` = 32[0m
+  [4;35;1mSQL (654.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (298.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'THB') LIMIT 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Create (298.0ms)[0m   [0;1mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:26', NULL, NULL, 'EUR', 'THB', '2010-01-28 12:18:26')[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 46.487, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:27' WHERE `id` = 33[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (304.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'ZAR') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Create (310.0ms)[0m   [0mINSERT INTO `exchange_rates` (`updated_at`, `rate`, `issued_on`, `base_currency`, `currency`, `created_at`) VALUES('2010-01-28 12:18:28', NULL, NULL, 'EUR', 'ZAR', '2010-01-28 12:18:28')[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (298.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (300.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 10.6672, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:29' WHERE `id` = 34[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (296.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (306.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (301.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (307.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:31' WHERE `id` = 1[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (312.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (306.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:33' WHERE `id` = 2[0m
+  [4;35;1mSQL (301.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (298.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'JPY') LIMIT 1[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (295.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:34' WHERE `id` = 3[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (298.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BGN') LIMIT 1[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:35' WHERE `id` = 4[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (304.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CZK') LIMIT 1[0m
+  [4;35;1mSQL (307.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (294.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:36' WHERE `id` = 5[0m
+  [4;35;1mSQL (307.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'DKK') LIMIT 1[0m
+  [4;35;1mSQL (316.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:37' WHERE `id` = 6[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EEK') LIMIT 1[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (300.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:39' WHERE `id` = 7[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'GBP') LIMIT 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (302.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:40' WHERE `id` = 8[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (301.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HUF') LIMIT 1[0m
+  [4;35;1mSQL (298.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:41' WHERE `id` = 9[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LTL') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (294.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:42' WHERE `id` = 10[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (296.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LVL') LIMIT 1[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (307.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:43' WHERE `id` = 11[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (304.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PLN') LIMIT 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (294.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:45' WHERE `id` = 12[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (301.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RON') LIMIT 1[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (293.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:46' WHERE `id` = 13[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (295.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SEK') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (294.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:47' WHERE `id` = 14[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (304.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CHF') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (294.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:48' WHERE `id` = 15[0m
+  [4;35;1mSQL (305.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (300.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NOK') LIMIT 1[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (298.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:49' WHERE `id` = 16[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (305.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HRK') LIMIT 1[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (306.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:51' WHERE `id` = 17[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RUB') LIMIT 1[0m
+  [4;35;1mSQL (305.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (298.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:52' WHERE `id` = 18[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (298.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'TRY') LIMIT 1[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (302.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:53' WHERE `id` = 19[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (306.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;35;1mSQL (301.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (298.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:54' WHERE `id` = 20[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BRL') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:55' WHERE `id` = 21[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CAD') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (301.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:56' WHERE `id` = 22[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CNY') LIMIT 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (294.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:58' WHERE `id` = 23[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HKD') LIMIT 1[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:18:59' WHERE `id` = 24[0m
+  [4;35;1mSQL (309.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'IDR') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (295.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 13261.49, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:00' WHERE `id` = 25[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'INR') LIMIT 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:01' WHERE `id` = 26[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'KRW') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (297.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:02' WHERE `id` = 27[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MXN') LIMIT 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (303.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:04' WHERE `id` = 28[0m
+  [4;35;1mSQL (307.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (315.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MYR') LIMIT 1[0m
+  [4;35;1mSQL (298.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (293.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:05' WHERE `id` = 29[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (296.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NZD') LIMIT 1[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (295.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:06' WHERE `id` = 30[0m
+  [4;35;1mSQL (333.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (307.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PHP') LIMIT 1[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (313.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:07' WHERE `id` = 31[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (313.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SGD') LIMIT 1[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (317.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:08' WHERE `id` = 32[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (315.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'THB') LIMIT 1[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (319.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:10' WHERE `id` = 33[0m
+  [4;35;1mSQL (306.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (308.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'ZAR') LIMIT 1[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (317.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:19:11' WHERE `id` = 34[0m
+  [4;35;1mSQL (408.0ms)[0m   [0mCOMMIT[0m
+
+NoMethodError (undefined method `/' for "1":String):
+  app/controllers/sms_controller.rb:69:in `currency'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (63.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (295.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:50:06) [GET]
+  Parameters: {"body"=>"xr AUD USD 1"}
+  [4;36;1mExchangeRate Columns (286.0ms)[0m   [0;1mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (286.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (284.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:24:57' WHERE `id` = 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (289.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:24:58' WHERE `id` = 2[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'JPY') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (284.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:24:59' WHERE `id` = 3[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BGN') LIMIT 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (284.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:00' WHERE `id` = 4[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CZK') LIMIT 1[0m
+  [4;36;1mSQL (290.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (289.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:01' WHERE `id` = 5[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (295.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'DKK') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:03' WHERE `id` = 6[0m
+  [4;36;1mSQL (384.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (292.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EEK') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:04' WHERE `id` = 7[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (295.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'GBP') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:05' WHERE `id` = 8[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (319.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HUF') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:06' WHERE `id` = 9[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (303.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LTL') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (327.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:07' WHERE `id` = 10[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (328.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LVL') LIMIT 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (331.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:09' WHERE `id` = 11[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (331.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PLN') LIMIT 1[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (337.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:10' WHERE `id` = 12[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (321.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RON') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (328.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:11' WHERE `id` = 13[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SEK') LIMIT 1[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (289.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:12' WHERE `id` = 14[0m
+  [4;36;1mSQL (289.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CHF') LIMIT 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:13' WHERE `id` = 15[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NOK') LIMIT 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:15' WHERE `id` = 16[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HRK') LIMIT 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (293.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:16' WHERE `id` = 17[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RUB') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:17' WHERE `id` = 18[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'TRY') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (287.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:18' WHERE `id` = 19[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (290.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;36;1mSQL (288.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (290.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:19' WHERE `id` = 20[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BRL') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:20' WHERE `id` = 21[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CAD') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (289.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:21' WHERE `id` = 22[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CNY') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (284.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:23' WHERE `id` = 23[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HKD') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:24' WHERE `id` = 24[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'IDR') LIMIT 1[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 13261.49, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:25' WHERE `id` = 25[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (290.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'INR') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:26' WHERE `id` = 26[0m
+  [4;36;1mSQL (288.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'KRW') LIMIT 1[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (289.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:27' WHERE `id` = 27[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (290.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MXN') LIMIT 1[0m
+  [4;36;1mSQL (289.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (287.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:28' WHERE `id` = 28[0m
+  [4;36;1mSQL (289.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MYR') LIMIT 1[0m
+  [4;36;1mSQL (290.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:30' WHERE `id` = 29[0m
+  [4;36;1mSQL (330.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NZD') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (290.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:31' WHERE `id` = 30[0m
+  [4;36;1mSQL (288.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (292.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PHP') LIMIT 1[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:32' WHERE `id` = 31[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SGD') LIMIT 1[0m
+  [4;36;1mSQL (281.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:33' WHERE `id` = 32[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'THB') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (290.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:34' WHERE `id` = 33[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'ZAR') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:35' WHERE `id` = 34[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `/' for "1":String):
+  app/controllers/sms_controller.rb:69:in `currency'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (285.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:55:38) [GET]
+  Parameters: {"body"=>"xr AUD USD 1"}
+  [4;35;1mExchangeRate Columns (288.0ms)[0m   [0mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:40' WHERE `id` = 1[0m
+  [4;35;1mSQL (288.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (286.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:42' WHERE `id` = 2[0m
+  [4;35;1mSQL (1341.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'JPY') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:44' WHERE `id` = 3[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BGN') LIMIT 1[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:45' WHERE `id` = 4[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CZK') LIMIT 1[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:46' WHERE `id` = 5[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'DKK') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (284.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:47' WHERE `id` = 6[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (298.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EEK') LIMIT 1[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (289.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:48' WHERE `id` = 7[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'GBP') LIMIT 1[0m
+  [4;35;1mSQL (288.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (284.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:50' WHERE `id` = 8[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HUF') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (290.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:51' WHERE `id` = 9[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LTL') LIMIT 1[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (300.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:52' WHERE `id` = 10[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LVL') LIMIT 1[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (288.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:53' WHERE `id` = 11[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PLN') LIMIT 1[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:54' WHERE `id` = 12[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RON') LIMIT 1[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (291.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:55' WHERE `id` = 13[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SEK') LIMIT 1[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (290.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:56' WHERE `id` = 14[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CHF') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (286.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:58' WHERE `id` = 15[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NOK') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (288.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:25:59' WHERE `id` = 16[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HRK') LIMIT 1[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (294.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:00' WHERE `id` = 17[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (292.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RUB') LIMIT 1[0m
+  [4;35;1mSQL (297.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (289.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:01' WHERE `id` = 18[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (295.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'TRY') LIMIT 1[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (286.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:02' WHERE `id` = 19[0m
+  [4;35;1mSQL (290.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (300.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:03' WHERE `id` = 20[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BRL') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (284.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:05' WHERE `id` = 21[0m
+  [4;35;1mSQL (367.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CAD') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (297.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:06' WHERE `id` = 22[0m
+  [4;35;1mSQL (349.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (301.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CNY') LIMIT 1[0m
+  [4;35;1mSQL (306.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:07' WHERE `id` = 23[0m
+  [4;35;1mSQL (324.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HKD') LIMIT 1[0m
+  [4;35;1mSQL (326.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:08' WHERE `id` = 24[0m
+  [4;35;1mSQL (324.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (286.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'IDR') LIMIT 1[0m
+  [4;35;1mSQL (336.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 13261.49, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:10' WHERE `id` = 25[0m
+  [4;35;1mSQL (326.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'INR') LIMIT 1[0m
+  [4;35;1mSQL (306.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (290.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:11' WHERE `id` = 26[0m
+  [4;35;1mSQL (321.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (291.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'KRW') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (295.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:12' WHERE `id` = 27[0m
+  [4;35;1mSQL (931.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MXN') LIMIT 1[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:14' WHERE `id` = 28[0m
+  [4;35;1mSQL (299.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MYR') LIMIT 1[0m
+  [4;35;1mSQL (288.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (289.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:15' WHERE `id` = 29[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NZD') LIMIT 1[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (284.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:16' WHERE `id` = 30[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (293.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PHP') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:17' WHERE `id` = 31[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SGD') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (293.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:18' WHERE `id` = 32[0m
+  [4;35;1mSQL (290.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'THB') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:20' WHERE `id` = 33[0m
+  [4;35;1mSQL (346.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'ZAR') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (284.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:21' WHERE `id` = 34[0m
+  [4;35;1mSQL (449.0ms)[0m   [0mCOMMIT[0m
+
+TypeError (can't convert Fixnum into String):
+  app/controllers/sms_controller.rb:71:in `+'
+  app/controllers/sms_controller.rb:71:in `currency'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (283.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (289.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:56:24) [GET]
+  Parameters: {"body"=>"xr AUD USD 1"}
+  [4;36;1mExchangeRate Columns (285.0ms)[0m   [0;1mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;35;1mExchangeRate Load (292.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (286.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (292.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:26' WHERE `id` = 1[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (301.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:27' WHERE `id` = 2[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (292.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'JPY') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:28' WHERE `id` = 3[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BGN') LIMIT 1[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (284.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:29' WHERE `id` = 4[0m
+  [4;36;1mSQL (413.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CZK') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (287.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:31' WHERE `id` = 5[0m
+  [4;36;1mSQL (288.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (290.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'DKK') LIMIT 1[0m
+  [4;36;1mSQL (290.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (288.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:32' WHERE `id` = 6[0m
+  [4;36;1mSQL (343.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (302.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EEK') LIMIT 1[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (290.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:33' WHERE `id` = 7[0m
+  [4;36;1mSQL (288.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'GBP') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:34' WHERE `id` = 8[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HUF') LIMIT 1[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:35' WHERE `id` = 9[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (292.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LTL') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:37' WHERE `id` = 10[0m
+  [4;36;1mSQL (316.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LVL') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:38' WHERE `id` = 11[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PLN') LIMIT 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:39' WHERE `id` = 12[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RON') LIMIT 1[0m
+  [4;36;1mSQL (288.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (288.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:40' WHERE `id` = 13[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SEK') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:41' WHERE `id` = 14[0m
+  [4;36;1mSQL (817.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CHF') LIMIT 1[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (288.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:43' WHERE `id` = 15[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NOK') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (288.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:44' WHERE `id` = 16[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HRK') LIMIT 1[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:45' WHERE `id` = 17[0m
+  [4;36;1mSQL (289.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RUB') LIMIT 1[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (285.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:46' WHERE `id` = 18[0m
+  [4;36;1mSQL (287.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (291.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'TRY') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (325.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:47' WHERE `id` = 19[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:49' WHERE `id` = 20[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BRL') LIMIT 1[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:50' WHERE `id` = 21[0m
+  [4;36;1mSQL (324.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (290.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CAD') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (292.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:51' WHERE `id` = 22[0m
+  [4;36;1mSQL (282.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CNY') LIMIT 1[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (290.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:52' WHERE `id` = 23[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (290.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HKD') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (284.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:53' WHERE `id` = 24[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (299.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'IDR') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (292.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 13261.49, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:54' WHERE `id` = 25[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'INR') LIMIT 1[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (287.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:56' WHERE `id` = 26[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (289.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'KRW') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (292.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:57' WHERE `id` = 27[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (293.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MXN') LIMIT 1[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:58' WHERE `id` = 28[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (294.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MYR') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:26:59' WHERE `id` = 29[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NZD') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (292.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:00' WHERE `id` = 30[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (290.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PHP') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (286.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:01' WHERE `id` = 31[0m
+  [4;36;1mSQL (365.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (294.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SGD') LIMIT 1[0m
+  [4;36;1mSQL (283.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (289.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:03' WHERE `id` = 32[0m
+  [4;36;1mSQL (305.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (287.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'THB') LIMIT 1[0m
+  [4;36;1mSQL (284.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (293.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:04' WHERE `id` = 33[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (294.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'ZAR') LIMIT 1[0m
+  [4;36;1mSQL (285.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (291.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:05' WHERE `id` = 34[0m
+  [4;36;1mSQL (288.0ms)[0m   [0;1mCOMMIT[0m
+
+TypeError (can't convert Fixnum into String):
+  app/controllers/sms_controller.rb:71:in `+'
+  app/controllers/sms_controller.rb:71:in `currency'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (291.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (299.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:57:35) [GET]
+  Parameters: {"body"=>"xr AUD USD 1"}
+  [4;35;1mExchangeRate Columns (287.0ms)[0m   [0mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;36;1mExchangeRate Load (286.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (288.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (292.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:38' WHERE `id` = 1[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (300.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:39' WHERE `id` = 2[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (299.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'JPY') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (286.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:40' WHERE `id` = 3[0m
+  [4;35;1mSQL (289.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BGN') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:41' WHERE `id` = 4[0m
+  [4;35;1mSQL (294.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (293.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CZK') LIMIT 1[0m
+  [4;35;1mSQL (289.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (290.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:42' WHERE `id` = 5[0m
+  [4;35;1mSQL (296.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'DKK') LIMIT 1[0m
+  [4;35;1mSQL (289.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (291.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:43' WHERE `id` = 6[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EEK') LIMIT 1[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (291.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:45' WHERE `id` = 7[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'GBP') LIMIT 1[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (293.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:46' WHERE `id` = 8[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (298.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HUF') LIMIT 1[0m
+  [4;35;1mSQL (289.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (293.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:47' WHERE `id` = 9[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LTL') LIMIT 1[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:48' WHERE `id` = 10[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LVL') LIMIT 1[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (290.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:49' WHERE `id` = 11[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (292.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PLN') LIMIT 1[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (296.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:50' WHERE `id` = 12[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RON') LIMIT 1[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (290.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:52' WHERE `id` = 13[0m
+  [4;35;1mSQL (289.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (291.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SEK') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:53' WHERE `id` = 14[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (294.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CHF') LIMIT 1[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:54' WHERE `id` = 15[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NOK') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (283.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:55' WHERE `id` = 16[0m
+  [4;35;1mSQL (293.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (294.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HRK') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:56' WHERE `id` = 17[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RUB') LIMIT 1[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (291.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:57' WHERE `id` = 18[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (302.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'TRY') LIMIT 1[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (288.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:27:59' WHERE `id` = 19[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:00' WHERE `id` = 20[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BRL') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (288.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:01' WHERE `id` = 21[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CAD') LIMIT 1[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (289.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:02' WHERE `id` = 22[0m
+  [4;35;1mSQL (290.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (288.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CNY') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:03' WHERE `id` = 23[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HKD') LIMIT 1[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:04' WHERE `id` = 24[0m
+  [4;35;1mSQL (303.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (294.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'IDR') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (289.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `rate` = 13261.49, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:05' WHERE `id` = 25[0m
+  [4;35;1mSQL (291.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (306.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'INR') LIMIT 1[0m
+  [4;35;1mSQL (301.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (329.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:07' WHERE `id` = 26[0m
+  [4;35;1mSQL (306.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (303.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'KRW') LIMIT 1[0m
+  [4;35;1mSQL (309.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (286.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:08' WHERE `id` = 27[0m
+  [4;35;1mSQL (335.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (292.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MXN') LIMIT 1[0m
+  [4;35;1mSQL (310.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:09' WHERE `id` = 28[0m
+  [4;35;1mSQL (356.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (378.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MYR') LIMIT 1[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (324.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:10' WHERE `id` = 29[0m
+  [4;35;1mSQL (282.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (331.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NZD') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:12' WHERE `id` = 30[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (289.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PHP') LIMIT 1[0m
+  [4;35;1mSQL (284.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (285.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:13' WHERE `id` = 31[0m
+  [4;35;1mSQL (285.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (287.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SGD') LIMIT 1[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (284.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:14' WHERE `id` = 32[0m
+  [4;35;1mSQL (292.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (298.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'THB') LIMIT 1[0m
+  [4;35;1mSQL (295.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (287.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:15' WHERE `id` = 33[0m
+  [4;35;1mSQL (283.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mExchangeRate Load (290.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'ZAR') LIMIT 1[0m
+  [4;35;1mSQL (288.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExchangeRate Update (286.0ms)[0m   [0;1mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:28:16' WHERE `id` = 34[0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCOMMIT[0m
+Completed in 41503ms (View: 1, DB: 41110) | 200 OK [http://localhost/sms/currency?body=xr+AUD+USD+1]
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (302.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:58:58) [GET]
+  Parameters: {"body"=>"xr AUD USD 100"}
+  [4;36;1mExchangeRate Columns (297.0ms)[0m   [0;1mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;35;1mExchangeRate Load (295.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (297.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;36;1mSQL (305.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (303.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:00' WHERE `id` = 1[0m
+  [4;36;1mSQL (306.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (307.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:01' WHERE `id` = 2[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (298.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'JPY') LIMIT 1[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (293.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:02' WHERE `id` = 3[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BGN') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (302.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:04' WHERE `id` = 4[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (298.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CZK') LIMIT 1[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (297.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:05' WHERE `id` = 5[0m
+  [4;36;1mSQL (306.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'DKK') LIMIT 1[0m
+  [4;36;1mSQL (304.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (309.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:06' WHERE `id` = 6[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (338.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'EEK') LIMIT 1[0m
+  [4;36;1mSQL (413.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (303.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:07' WHERE `id` = 7[0m
+  [4;36;1mSQL (306.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (302.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'GBP') LIMIT 1[0m
+  [4;36;1mSQL (320.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (302.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:09' WHERE `id` = 8[0m
+  [4;36;1mSQL (302.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (316.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HUF') LIMIT 1[0m
+  [4;36;1mSQL (387.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (316.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:10' WHERE `id` = 9[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (318.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LTL') LIMIT 1[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (309.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:11' WHERE `id` = 10[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (312.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'LVL') LIMIT 1[0m
+  [4;36;1mSQL (300.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (312.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:12' WHERE `id` = 11[0m
+  [4;36;1mSQL (306.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (299.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PLN') LIMIT 1[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (300.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:14' WHERE `id` = 12[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RON') LIMIT 1[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:15' WHERE `id` = 13[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (302.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SEK') LIMIT 1[0m
+  [4;36;1mSQL (295.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (307.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:16' WHERE `id` = 14[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (299.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CHF') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (308.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:17' WHERE `id` = 15[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (312.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NOK') LIMIT 1[0m
+  [4;36;1mSQL (299.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (298.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:18' WHERE `id` = 16[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (310.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HRK') LIMIT 1[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (300.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:20' WHERE `id` = 17[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (295.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'RUB') LIMIT 1[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (310.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:21' WHERE `id` = 18[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'TRY') LIMIT 1[0m
+  [4;36;1mSQL (329.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:22' WHERE `id` = 19[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'AUD') LIMIT 1[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (296.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:23' WHERE `id` = 20[0m
+  [4;36;1mSQL (312.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'BRL') LIMIT 1[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (293.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:24' WHERE `id` = 21[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CAD') LIMIT 1[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (297.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:26' WHERE `id` = 22[0m
+  [4;36;1mSQL (302.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (301.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'CNY') LIMIT 1[0m
+  [4;36;1mSQL (307.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (294.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:27' WHERE `id` = 23[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (301.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'HKD') LIMIT 1[0m
+  [4;36;1mSQL (296.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (312.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:28' WHERE `id` = 24[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'IDR') LIMIT 1[0m
+  [4;36;1mSQL (294.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (297.0ms)[0m   [0mUPDATE `exchange_rates` SET `rate` = 13261.49, `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:29' WHERE `id` = 25[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'INR') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:30' WHERE `id` = 26[0m
+  [4;36;1mSQL (304.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (296.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'KRW') LIMIT 1[0m
+  [4;36;1mSQL (306.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (302.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:32' WHERE `id` = 27[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (308.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MXN') LIMIT 1[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:33' WHERE `id` = 28[0m
+  [4;36;1mSQL (301.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (309.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'MYR') LIMIT 1[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (298.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:34' WHERE `id` = 29[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'NZD') LIMIT 1[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (295.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:35' WHERE `id` = 30[0m
+  [4;36;1mSQL (297.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'PHP') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (296.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:36' WHERE `id` = 31[0m
+  [4;36;1mSQL (298.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (297.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'SGD') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (293.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:38' WHERE `id` = 32[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (300.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'THB') LIMIT 1[0m
+  [4;36;1mSQL (292.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (297.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:39' WHERE `id` = 33[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExchangeRate Load (300.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`base_currency` = 'EUR' AND `exchange_rates`.`currency` = 'ZAR') LIMIT 1[0m
+  [4;36;1mSQL (291.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExchangeRate Update (298.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:40' WHERE `id` = 34[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
+Completed in 42808ms (View: 2, DB: 42466) | 200 OK [http://localhost/sms/currency?body=xr+AUD+USD+100]

@@ -62,8 +62,14 @@ class SmsController < ApplicationController
 
   end
 
+  #Perform currency exchange rate
   def currency
-    #look up currency
+    
+    queryparms = params[:body].scan(/\w+/)
+    converted_money=CurrencyExchange.currency_exchange(queryparms[3].to_i, queryparms[1], queryparms[2])
+
+    render :text => queryparms[3] +' '+ queryparms[1]+' = '+converted_money.to_s+' '+queryparms[2]
+
   end
 
 

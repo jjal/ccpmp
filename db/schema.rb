@@ -9,18 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091218092937) do
+ActiveRecord::Schema.define(:version => 20100128121615) do
+
+  create_table "agents", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "commodities", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name",                    :null => false
     t.string   "code",       :limit => 5, :null => false
+    t.integer  "camis_code",              :null => false
   end
 
   add_index "commodities", ["code"], :name => "code", :unique => true
 
   create_table "exchange_rates", :force => true do |t|
+    t.string   "base_currency"
+    t.string   "currency"
+    t.float    "rate"
+    t.date     "issued_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +45,14 @@ ActiveRecord::Schema.define(:version => 20091218092937) do
   add_index "markets", ["code"], :name => "code", :unique => true
 
   create_table "prices", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "amount",       :precision => 8, :scale => 2, :null => false
+    t.integer  "market_id",                                  :null => false
+    t.integer  "commodity_id",                               :null => false
+  end
+
+  create_table "provinces", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
