@@ -1,7 +1,9 @@
 class CreateAgents < ActiveRecord::Migration
   def self.up
     create_table :agents do |t|
-
+      t.string :phone
+      t.int :market_id
+      t.int :commodity_id
       t.timestamps
     end
   end

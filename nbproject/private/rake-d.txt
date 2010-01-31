@@ -42,6 +42,7 @@ doc\:clobber_rails=Remove rdoc products
 doc\:guides=Generate Rails guides
 doc\:plugins=Generate documentation for all installed plugins
 doc\:plugins\:active_scaffold=Generate documentation for the active_scaffold plugin
+doc\:plugins\:currencyexchange=Generate documentation for the currencyexchange plugin
 doc\:rails=Build the RDOC HTML Files
 doc\:reapp=Force a rebuild of the RDOC files
 doc\:rerails=Force a rebuild of the RDOC files

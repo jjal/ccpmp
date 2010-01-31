@@ -1753,3 +1753,1052 @@ Processing SmsController#currency (for 127.0.0.1 at 2010-01-28 22:58:58) [GET]
   [4;35;1mExchangeRate Update (298.0ms)[0m   [0mUPDATE `exchange_rates` SET `issued_on` = '2010-01-27 00:00:00', `updated_at` = '2010-01-28 12:29:40' WHERE `id` = 34[0m
   [4;36;1mSQL (293.0ms)[0m   [0;1mCOMMIT[0m
 Completed in 42808ms (View: 2, DB: 42466) | 200 OK [http://localhost/sms/currency?body=xr+AUD+USD+100]
+  [4;36;1mSQL (331.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-31 21:12:22) [GET]
+
+ActionController::RoutingError (No route matches "/agents/list" with {:method=>:get}):
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (321.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (331.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAgent Columns (315.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#list (for 127.0.0.1 at 2010-01-31 21:12:38) [GET]
+  [4;35;1mSQL (312.0ms)[0m   [0mSELECT count(*) AS count_all FROM `agents` [0m
+  [4;36;1mAgent Load (322.0ms)[0m   [0;1mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (64.0ms)
+Rendered _list_column_headings (32.0ms)
+Rendered _messages (2.0ms)
+Rendered _list (53.0ms)
+Completed in 1484ms (View: 237, DB: 1601) | 200 OK [http://localhost/agent/list]
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (330.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAgent Columns (302.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#new (for 127.0.0.1 at 2010-01-31 21:12:46) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter"}
+Rendered _form_attribute (5.0ms)
+Rendered _form (16.0ms)
+Rendered _create_form (75.0ms)
+Rendered _messages (2.0ms)
+Rendered _list_inline_adapter (12.0ms)
+Completed in 129ms (View: 18, DB: 0) | 200 OK [http://localhost/agent/new?_method=get&adapter=_list_inline_adapter]
+  [4;35;1mSQL (326.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (328.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAgent Columns (343.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#list (for 127.0.0.1 at 2010-01-31 21:13:58) [GET]
+  [4;36;1mSQL (319.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `agents` [0m
+  [4;35;1mAgent Load (326.0ms)[0m   [0mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (9.0ms)
+Rendered _list_column_headings (129.0ms)
+Rendered _messages (2.0ms)
+Rendered _list (152.0ms)
+Completed in 878ms (View: 224, DB: 1642) | 200 OK [http://localhost/agent/list]
+  [4;35;1mSQL (311.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (321.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAgent Columns (333.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#new (for 127.0.0.1 at 2010-01-31 21:14:08) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter"}
+  [4;36;1mMarket Columns (307.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+Rendered _horizontal_subform_header (7.0ms)
+Rendered _form_attribute (5.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _horizontal_subform_record (115.0ms)
+  [4;35;1mSQL (331.0ms)[0m   [0mSELECT count(*) AS count_all FROM `markets` [0m
+  [4;36;1mMarket Load (325.0ms)[0m   [0;1mSELECT * FROM `markets` [0m
+Rendered _form_association_footer (676.0ms)
+Rendered _horizontal_subform (831.0ms)
+Rendered _form_association (863.0ms)
+Rendered _form_attribute (4.0ms)
+  [4;35;1mProvince Columns (305.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+Rendered _horizontal_subform_header (4.0ms)
+Rendered _horizontal_subform_record (3.0ms)
+  [4;36;1mSQL (309.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `provinces` [0m
+Rendered _form_association_footer (317.0ms)
+Rendered _horizontal_subform (328.0ms)
+Rendered _form_association (339.0ms)
+Rendered _form (1902.0ms)
+Rendered _create_form (1926.0ms)
+Rendered _messages (3.0ms)
+Rendered _list_inline_adapter (13.0ms)
+Completed in 1986ms (View: 20, DB: 0) | 200 OK [http://localhost/agent/new?_method=get&adapter=_list_inline_adapter]
+  [4;35;1mSQL (330.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (329.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAgent Columns (322.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#edit_associated (for 127.0.0.1 at 2010-01-31 21:14:33) [GET]
+  Parameters: {"association"=>"province"}
+  [4;36;1mProvince Columns (328.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+Rendering edit_associated
+Rendered _horizontal_subform_record (8.0ms)
+Completed in 451ms (View: 117, DB: 1309) | 200 OK [http://localhost/agent/edit_associated?association=province]
+  [4;35;1mSQL (332.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (326.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAgent Columns (317.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#edit_associated (for 127.0.0.1 at 2010-01-31 21:15:06) [GET]
+  Parameters: {"association"=>"market", "associated_id"=>"2"}
+  [4;36;1mMarket Columns (329.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+  [4;35;1mMarket Load (324.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`id` = 2) [0m
+Rendering edit_associated
+Rendered _form_attribute (4.0ms)
+Rendered _form_attribute (1.0ms)
+Rendered _horizontal_subform_record (20.0ms)
+Completed in 814ms (View: 157, DB: 1628) | 200 OK [http://localhost/agent/edit_associated?associated_id=2&association=market]
+  [4;36;1mSQL (328.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (322.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAgent Columns (333.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#edit_associated (for 127.0.0.1 at 2010-01-31 21:15:15) [GET]
+  Parameters: {"association"=>"province"}
+  [4;35;1mProvince Columns (304.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+Rendering edit_associated
+Rendered _horizontal_subform_record (6.0ms)
+Completed in 368ms (View: 60, DB: 1287) | 200 OK [http://localhost/agent/edit_associated?association=province]
+  [4;36;1mSQL (326.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAgent Columns (310.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#create (for 127.0.0.1 at 2010-01-31 21:15:23) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4x6dns1UN9KpxOwbB5O7VwVTPLuxkQboXsA7IkZjeDw=", "associated_id"=>"2", "record"=>{"market"=>{"name"=>"Battambang", "code"=>"BTB", "id"=>"2"}, "phone"=>"012345678"}}
+  [4;35;1mSQL (309.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMarket Columns (908.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+  [4;35;1mMarket Load (330.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`id` = 2) [0m
+  [4;36;1mAgent Create (0.0ms)[0m   [0;1mMysql::Error: Column 'province_id' cannot be null: INSERT INTO `agents` (`updated_at`, `province_id`, `phone`, `market_id`, `created_at`) VALUES('2010-01-31 14:15:24', NULL, '012345678', 2, '2010-01-31 14:15:24')[0m
+  [4;35;1mSQL (305.0ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Column 'province_id' cannot be null: INSERT INTO `agents` (`updated_at`, `province_id`, `phone`, `market_id`, `created_at`) VALUES('2010-01-31 14:15:24', NULL, '012345678', 2, '2010-01-31 14:15:24')):
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (163.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (328.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProvince Columns (310.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+
+
+Processing ProvinceController#list (for 127.0.0.1 at 2010-01-31 21:16:26) [GET]
+  [4;35;1mSQL (311.0ms)[0m   [0mSELECT count(*) AS count_all FROM `provinces` [0m
+  [4;36;1mProvince Load (313.0ms)[0m   [0;1mSELECT `provinces`.* FROM `provinces` ORDER BY provinces.`id` ASC LIMIT 0, 15[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `provinces`.* FROM `provinces` ORDER BY provinces.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (7.0ms)
+Rendered _list_column_headings (18.0ms)
+Rendered _messages (2.0ms)
+Rendered _list (36.0ms)
+Completed in 728ms (View: 98, DB: 1589) | 200 OK [http://localhost/province/list]
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (328.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:32:36) [GET]
+  Parameters: {"body"=>"w asdf"}
+
+TypeError (can't convert nil into String):
+  app/controllers/sms_controller.rb:9:in `+'
+  app/controllers/sms_controller.rb:9:in `index'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (69.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (498.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (411.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:36:20) [GET]
+  Parameters: {"body"=>"w asdf"}
+processing sms: w asdf from number: 
+Redirected to http://localhost:19049/sms/weather?body=w+asdf
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/sms_controller.rb:23:in `index'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (335.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (326.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:37:44) [GET]
+  Parameters: {"body"=>"w asdf"}
+processing sms: w asdf from number: 
+Redirected to http://localhost:19049/sms/weather?body=w+asdf
+Completed in 1ms (DB: 661) | 302 Found [http://localhost/sms/?body=w%20asdf]
+  [4;36;1mSQL (322.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (329.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#weather (for 127.0.0.1 at 2010-01-31 21:37:46) [GET]
+  Parameters: {"body"=>"w asdf"}
+Completed in 2ms (View: 1, DB: 651) | 200 OK [http://localhost/sms/weather?body=w+asdf]
+  [4;36;1mSQL (328.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (323.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProvince Columns (314.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+
+
+Processing ProvinceController#list (for 127.0.0.1 at 2010-01-31 21:38:06) [GET]
+  [4;35;1mSQL (316.0ms)[0m   [0mSELECT count(*) AS count_all FROM `provinces` [0m
+  [4;36;1mProvince Load (311.0ms)[0m   [0;1mSELECT `provinces`.* FROM `provinces` ORDER BY provinces.`id` ASC LIMIT 0, 15[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `provinces`.* FROM `provinces` ORDER BY provinces.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (47.0ms)
+Rendered _list_column_headings (19.0ms)
+Rendered _messages (2.0ms)
+Rendered _list (38.0ms)
+Completed in 803ms (View: 151, DB: 1592) | 200 OK [http://localhost/province/list]
+  [4;36;1mSQL (326.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (326.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProvince Columns (307.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+
+
+Processing ProvinceController#list (for 127.0.0.1 at 2010-01-31 21:38:56) [GET]
+  [4;35;1mSQL (311.0ms)[0m   [0mSELECT count(*) AS count_all FROM `provinces` [0m
+  [4;36;1mProvince Load (329.0ms)[0m   [0;1mSELECT `provinces`.* FROM `provinces` ORDER BY provinces.`id` ASC LIMIT 0, 15[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `provinces`.* FROM `provinces` ORDER BY provinces.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (7.0ms)
+Rendered _list_column_headings (31.0ms)
+Rendered _messages (2.0ms)
+Rendered _list (51.0ms)
+Completed in 759ms (View: 113, DB: 1599) | 200 OK [http://localhost/province/list]
+  [4;36;1mSQL (323.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (331.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProvince Columns (331.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+
+
+Processing ProvinceController#new (for 127.0.0.1 at 2010-01-31 21:39:10) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter"}
+Rendered _form_attribute (4.0ms)
+Rendered _form_attribute (1.0ms)
+Rendered _form (20.0ms)
+Rendered _create_form (43.0ms)
+Rendered _messages (3.0ms)
+Rendered _list_inline_adapter (12.0ms)
+Completed in 170ms (View: 19, DB: 0) | 200 OK [http://localhost/province/new?_method=get&adapter=_list_inline_adapter]
+  [4;35;1mSQL (331.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProvince Columns (310.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+
+
+Processing ProvinceController#create (for 127.0.0.1 at 2010-01-31 21:39:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4x6dns1UN9KpxOwbB5O7VwVTPLuxkQboXsA7IkZjeDw=", "record"=>{"name"=>"Battambang", "code"=>"BB"}}
+  [4;36;1mSQL (309.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProvince Create (321.0ms)[0m   [0mINSERT INTO `provinces` (`name`, `updated_at`, `code`, `created_at`) VALUES('Battambang', '2010-01-31 14:39:22', 'BB', '2010-01-31 14:39:22')[0m
+  [4;36;1mSQL (330.0ms)[0m   [0;1mCOMMIT[0m
+Rendering on_create
+Rendered _list_actions (10.0ms)
+Rendered _list_record (396.0ms)
+Rendered _messages (2.0ms)
+Completed in 1449ms (View: 479, DB: 1928) | 200 OK [http://localhost/province/create]
+  [4;35;1mSQL (327.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTrader Columns (309.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#list (for 127.0.0.1 at 2010-01-31 21:39:35) [GET]
+  [4;36;1mSQL (329.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `agents` [0m
+  [4;35;1mTrader Load (327.0ms)[0m   [0mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (9.0ms)
+Rendered _list_column_headings (52.0ms)
+Rendered _messages (2.0ms)
+Rendered _list (79.0ms)
+Completed in 831ms (View: 162, DB: 1617) | 200 OK [http://localhost/trader/list]
+  [4;35;1mSQL (329.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (326.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAgent Columns (305.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing AgentController#list (for 127.0.0.1 at 2010-01-31 21:39:47) [GET]
+  [4;36;1mSQL (321.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `agents` [0m
+  [4;35;1mAgent Load (323.0ms)[0m   [0mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (8.0ms)
+Rendered _list_column_headings (118.0ms)
+Rendered _messages (3.0ms)
+Rendered _list (143.0ms)
+Completed in 867ms (View: 213, DB: 1604) | 200 OK [http://localhost/agent/list]
+  [4;35;1mSQL (327.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (324.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTrader Columns (329.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#list (for 127.0.0.1 at 2010-01-31 21:39:55) [GET]
+  [4;36;1mSQL (321.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `agents` [0m
+  [4;35;1mTrader Load (326.0ms)[0m   [0mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `agents`.* FROM `agents` ORDER BY agents.`id` ASC LIMIT 0, 15[0m
+Rendering template within layouts/application
+Rendering list
+Rendered _list_header (9.0ms)
+Rendered _list_column_headings (45.0ms)
+Rendered _messages (2.0ms)
+Rendered _list (67.0ms)
+Completed in 792ms (View: 136, DB: 1627) | 200 OK [http://localhost/trader/list]
+  [4;35;1mSQL (328.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTrader Columns (335.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#new (for 127.0.0.1 at 2010-01-31 21:40:02) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter"}
+  [4;36;1mMarket Columns (334.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+Rendered _horizontal_subform_header (5.0ms)
+Rendered _form_attribute (4.0ms)
+Rendered _form_attribute (1.0ms)
+Rendered _horizontal_subform_record (23.0ms)
+  [4;35;1mSQL (831.0ms)[0m   [0mSELECT count(*) AS count_all FROM `markets` [0m
+  [4;36;1mMarket Load (324.0ms)[0m   [0;1mSELECT * FROM `markets` [0m
+Rendered _form_association_footer (1205.0ms)
+Rendered _horizontal_subform (1259.0ms)
+Rendered _form_association (1277.0ms)
+Rendered _form_attribute (4.0ms)
+  [4;35;1mProvince Columns (312.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+Rendered _horizontal_subform_header (4.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _horizontal_subform_record (10.0ms)
+  [4;36;1mSQL (333.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `provinces` [0m
+  [4;35;1mProvince Load (324.0ms)[0m   [0mSELECT * FROM `provinces` [0m
+Rendered _form_association_footer (668.0ms)
+Rendered _horizontal_subform (686.0ms)
+Rendered _form_association (697.0ms)
+Rendered _form (2704.0ms)
+Rendered _create_form (2726.0ms)
+Rendered _messages (2.0ms)
+Rendered _list_inline_adapter (10.0ms)
+Completed in 2779ms (View: 17, DB: 0) | 200 OK [http://localhost/trader/new?_method=get&adapter=_list_inline_adapter]
+  [4;36;1mSQL (415.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (405.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTrader Columns (362.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#edit_associated (for 127.0.0.1 at 2010-01-31 21:40:17) [GET]
+  Parameters: {"association"=>"market", "associated_id"=>"1"}
+  [4;35;1mMarket Columns (363.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mMarket Load (406.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`id` = 1) [0m
+Rendering edit_associated
+Rendered _form_attribute (5.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _horizontal_subform_record (23.0ms)
+Completed in 872ms (View: 97, DB: 1951) | 200 OK [http://localhost/trader/edit_associated?associated_id=1&association=market]
+  [4;35;1mSQL (326.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTrader Columns (330.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#edit_associated (for 127.0.0.1 at 2010-01-31 21:40:23) [GET]
+  Parameters: {"association"=>"province", "associated_id"=>"1"}
+  [4;36;1mProvince Columns (323.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+  [4;35;1mProvince Load (327.0ms)[0m   [0mSELECT * FROM `provinces` WHERE (`provinces`.`id` = 1) [0m
+Rendering edit_associated
+Rendered _form_attribute (4.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _horizontal_subform_record (23.0ms)
+Completed in 741ms (View: 85, DB: 1631) | 200 OK [http://localhost/trader/edit_associated?associated_id=1&association=province]
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTrader Columns (322.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#create (for 127.0.0.1 at 2010-01-31 21:40:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4x6dns1UN9KpxOwbB5O7VwVTPLuxkQboXsA7IkZjeDw=", "associated_id"=>"1", "record"=>{"market"=>{"name"=>"BB!", "code"=>"BB1", "id"=>"1"}, "phone"=>"012345678", "province"=>{"name"=>"Battambang", "code"=>"BB", "id"=>"1"}}}
+  [4;35;1mSQL (311.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMarket Columns (322.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+  [4;35;1mMarket Load (320.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`id` = 1) [0m
+  [4;36;1mProvince Columns (306.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+  [4;35;1mProvince Load (332.0ms)[0m   [0mSELECT * FROM `provinces` WHERE (`provinces`.`id` = 1) [0m
+  [4;36;1mTrader Create (330.0ms)[0m   [0;1mINSERT INTO `agents` (`updated_at`, `province_id`, `phone`, `market_id`, `created_at`) VALUES('2010-01-31 14:40:35', 1, '012345678', 1, '2010-01-31 14:40:35')[0m
+  [4;35;1mSQL (321.0ms)[0m   [0mCOMMIT[0m
+Rendering on_create
+Rendered _list_actions (10.0ms)
+Rendered _list_record (30.0ms)
+Rendered _messages (2.0ms)
+Completed in 2402ms (View: 67, DB: 3216) | 200 OK [http://localhost/trader/create]
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (325.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTrader Columns (335.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#new (for 127.0.0.1 at 2010-01-31 21:40:41) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter"}
+  [4;35;1mMarket Columns (324.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+Rendered _horizontal_subform_header (6.0ms)
+Rendered _form_attribute (4.0ms)
+Rendered _form_attribute (1.0ms)
+Rendered _horizontal_subform_record (22.0ms)
+  [4;36;1mSQL (320.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `markets` [0m
+  [4;35;1mMarket Load (323.0ms)[0m   [0mSELECT * FROM `markets` [0m
+Rendered _form_association_footer (663.0ms)
+Rendered _horizontal_subform (788.0ms)
+Rendered _form_association (807.0ms)
+Rendered _form_attribute (3.0ms)
+  [4;36;1mProvince Columns (309.0ms)[0m   [0;1mSHOW FIELDS FROM `provinces`[0m
+Rendered _horizontal_subform_header (4.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _horizontal_subform_record (12.0ms)
+  [4;35;1mSQL (329.0ms)[0m   [0mSELECT count(*) AS count_all FROM `provinces` [0m
+  [4;36;1mProvince Load (324.0ms)[0m   [0;1mSELECT * FROM `provinces` [0m
+Rendered _form_association_footer (666.0ms)
+Rendered _horizontal_subform (686.0ms)
+Rendered _form_association (697.0ms)
+Rendered _form (2217.0ms)
+Rendered _create_form (2240.0ms)
+Rendered _messages (2.0ms)
+Rendered _list_inline_adapter (11.0ms)
+Completed in 2294ms (View: 18, DB: 0) | 200 OK [http://localhost/trader/new?_method=get&adapter=_list_inline_adapter]
+  [4;35;1mSQL (324.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (330.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTrader Columns (329.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#edit_associated (for 127.0.0.1 at 2010-01-31 21:40:51) [GET]
+  Parameters: {"association"=>"market", "associated_id"=>"1"}
+  [4;36;1mMarket Columns (319.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+  [4;35;1mMarket Load (326.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`id` = 1) [0m
+Rendering edit_associated
+Rendered _form_attribute (4.0ms)
+Rendered _form_attribute (2.0ms)
+Rendered _horizontal_subform_record (24.0ms)
+Completed in 751ms (View: 100, DB: 1628) | 200 OK [http://localhost/trader/edit_associated?associated_id=1&association=market]
+  [4;36;1mSQL (326.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTrader Columns (310.0ms)[0m   [0;1mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#edit_associated (for 127.0.0.1 at 2010-01-31 21:40:56) [GET]
+  Parameters: {"association"=>"province", "associated_id"=>"1"}
+  [4;35;1mProvince Columns (320.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+  [4;36;1mProvince Load (307.0ms)[0m   [0;1mSELECT * FROM `provinces` WHERE (`provinces`.`id` = 1) [0m
+Rendering edit_associated
+Rendered _form_attribute (5.0ms)
+Rendered _form_attribute (3.0ms)
+Rendered _horizontal_subform_record (26.0ms)
+Completed in 728ms (View: 94, DB: 1590) | 200 OK [http://localhost/trader/edit_associated?associated_id=1&association=province]
+  [4;35;1mSQL (326.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (311.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTrader Columns (323.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+
+Processing TraderController#create (for 127.0.0.1 at 2010-01-31 21:41:01) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4x6dns1UN9KpxOwbB5O7VwVTPLuxkQboXsA7IkZjeDw=", "associated_id"=>"1", "record"=>{"market"=>{"name"=>"BB!", "code"=>"BB1", "id"=>"1"}, "phone"=>"123456789", "province"=>{"name"=>"Battambang", "code"=>"BB", "id"=>"1"}}}
+  [4;36;1mSQL (316.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMarket Columns (324.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mMarket Load (329.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`id` = 1) [0m
+  [4;35;1mProvince Columns (313.0ms)[0m   [0mSHOW FIELDS FROM `provinces`[0m
+  [4;36;1mProvince Load (322.0ms)[0m   [0;1mSELECT * FROM `provinces` WHERE (`provinces`.`id` = 1) [0m
+  [4;35;1mTrader Create (335.0ms)[0m   [0mINSERT INTO `agents` (`updated_at`, `province_id`, `phone`, `market_id`, `created_at`) VALUES('2010-01-31 14:41:02', 1, '123456789', 1, '2010-01-31 14:41:02')[0m
+  [4;36;1mSQL (324.0ms)[0m   [0;1mCOMMIT[0m
+Rendering on_create
+Rendered _list_actions (10.0ms)
+Rendered _list_record (30.0ms)
+Rendered _messages (2.0ms)
+Completed in 2419ms (View: 69, DB: 3223) | 200 OK [http://localhost/trader/create]
+  [4;35;1mSQL (327.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (326.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:44:02) [GET]
+  Parameters: {"body"=>"T M BB"}
+processing sms: T M BB from number: 
+Redirected to http://localhost:19049/sms/trader?body=T+M+BB
+Completed in 1ms (DB: 653) | 302 Found [http://localhost/sms/?body=T%20M%20BB]
+  [4;35;1mSQL (327.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (323.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:44:04) [GET]
+  Parameters: {"body"=>"T M BB"}
+  [4;35;1mCommodity Load (323.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;36;1mMarket Load (318.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB') LIMIT 1[0m
+  [4;35;1mCommodity Columns (315.0ms)[0m   [0mSHOW FIELDS FROM `commodities`[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/sms_controller.rb:106:in `trader'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (329.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (328.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:44:45) [GET]
+  Parameters: {"body"=>"T M BB"}
+  [4;36;1mCommodity Load (309.0ms)[0m   [0;1mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;35;1mMarket Load (319.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB') LIMIT 1[0m
+  [4;36;1mCommodity Columns (319.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/sms_controller.rb:106:in `trader'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (330.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:45:28) [GET]
+  Parameters: {"body"=>"T M BB"}
+  [4;36;1mCommodity Load (327.0ms)[0m   [0;1mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;35;1mMarket Load (326.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB') LIMIT 1[0m
+  [4;36;1mCommodity Columns (315.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/sms_controller.rb:106:in `trader'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (68.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (327.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (330.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:45:41) [GET]
+  Parameters: {"body"=>"T M BB"}
+  [4;35;1mCommodity Load (332.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;36;1mMarket Load (321.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB') LIMIT 1[0m
+  [4;35;1mCommodity Columns (333.0ms)[0m   [0mSHOW FIELDS FROM `commodities`[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/sms_controller.rb:106:in `trader'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (63.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (307.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:47:00) [GET]
+  Parameters: {"body"=>"T M BTB"}
+  [4;36;1mCommodity Load (318.0ms)[0m   [0;1mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;35;1mMarket Load (318.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BTB') LIMIT 1[0m
+  [4;36;1mCommodity Columns (324.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mMarket Columns (327.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mAgent Load (314.0ms)[0m   [0;1mSELECT * FROM `agents` WHERE (`agents`.`commodity_id` = 1 AND `agents`.`market_id` = 2) LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/sms_controller.rb:108:in `trader'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (66.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1103.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (328.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:47:25) [GET]
+  Parameters: {"body"=>"T M BTB"}
+  [4;35;1mCommodity Load (332.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;36;1mMarket Load (318.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BTB') LIMIT 1[0m
+  [4;35;1mCommodity Columns (320.0ms)[0m   [0mSHOW FIELDS FROM `commodities`[0m
+  [4;36;1mMarket Columns (326.0ms)[0m   [0;1mSHOW FIELDS FROM `markets`[0m
+  [4;35;1mAgent Load (325.0ms)[0m   [0mSELECT * FROM `agents` WHERE (`agents`.`commodity_id` = 1 AND `agents`.`market_id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (328.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (329.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:48:04) [GET]
+  Parameters: {"body"=>"T M BB1"}
+  [4;36;1mCommodity Load (313.0ms)[0m   [0;1mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;35;1mMarket Load (322.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB1') LIMIT 1[0m
+  [4;36;1mCommodity Columns (312.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mMarket Columns (330.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mAgent Load (318.0ms)[0m   [0;1mSELECT * FROM `agents` WHERE (`agents`.`commodity_id` = 1 AND `agents`.`market_id` = 1) LIMIT 1[0m
+  [4;35;1mAgent Columns (329.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+
+NoMethodError (undefined method `each' for #<Agent:0x57f24ac>):
+  app/controllers/sms_controller.rb:108:in `trader'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (328.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (326.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#trader (for 127.0.0.1 at 2010-01-31 21:50:47) [GET]
+  Parameters: {"body"=>"T M BB1"}
+  [4;36;1mCommodity Load (308.0ms)[0m   [0;1mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;35;1mMarket Load (317.0ms)[0m   [0mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB1') LIMIT 1[0m
+  [4;36;1mCommodity Columns (325.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mMarket Columns (327.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mAgent Load (323.0ms)[0m   [0;1mSELECT * FROM `agents` WHERE (`agents`.`commodity_id` = 1 AND `agents`.`market_id` = 1) [0m
+  [4;35;1mAgent Columns (331.0ms)[0m   [0mSHOW FIELDS FROM `agents`[0m
+Completed in 1957ms (View: 1, DB: 2585) | 200 OK [http://localhost/sms/trader?body=T+M+BB1]
+  [4;36;1mSQL (324.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:51:43) [GET]
+  Parameters: {"body"=>"XR USD KHR 100"}
+processing sms: XR USD KHR 100 from number: 
+Redirected to http://localhost:19049/sms/currency?body=XR+USD+KHR+100
+Completed in 2ms (DB: 651) | 302 Found [http://localhost/sms/?body=XR%20USD%20KHR%20100]
+  [4;36;1mSQL (312.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (325.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-31 21:51:45) [GET]
+  Parameters: {"body"=>"XR USD KHR 100"}
+  [4;36;1mExchangeRate Columns (325.0ms)[0m   [0;1mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;35;1mExchangeRate Load (325.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (330.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'KHR') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (655.0ms)[0m   [0mSELECT * FROM `exchange_rates` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'KHR') LIMIT 1[0m
+
+RuntimeError (CURRENCY CONVERSION NOT POSSIBLE USD AND KHR):
+  app/controllers/sms_controller.rb:123:in `currency'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (133.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (326.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-31 21:52:07) [GET]
+  Parameters: {"body"=>"XR USD EUR 100"}
+  [4;35;1mExchangeRate Columns (309.0ms)[0m   [0mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;36;1mExchangeRate Load (334.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'USD') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (318.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+Completed in 973ms (View: 1, DB: 1614) | 200 OK [http://localhost/sms/currency?body=XR+USD+EUR+100]
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (328.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#currency (for 127.0.0.1 at 2010-01-31 21:52:22) [GET]
+  Parameters: {"body"=>"XR EUR KHR 100"}
+  [4;36;1mExchangeRate Columns (312.0ms)[0m   [0;1mSHOW FIELDS FROM `exchange_rates`[0m
+  [4;35;1mExchangeRate Load (324.0ms)[0m   [0mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'EUR') LIMIT 1[0m
+  [4;36;1mExchangeRate Load (325.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'KHR') LIMIT 1[0m
+  [4;35;1mExchangeRate Load (643.0ms)[0m   [0mSELECT * FROM `exchange_rates` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `exchange_rates` WHERE (`exchange_rates`.`currency` = 'KHR') LIMIT 1[0m
+
+RuntimeError (CURRENCY CONVERSION NOT POSSIBLE EUR AND KHR):
+  app/controllers/sms_controller.rb:123:in `currency'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (331.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (326.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:55:35) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+processing sms: np M BB1 600 from number: 
+Redirected to http://localhost:19049/sms/input?body=np+M+BB1+600
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/sms_controller.rb:30:in `index'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (161.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (324.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (331.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:56:02) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+processing sms: np M BB1 600 from number: 
+Redirected to http://localhost:19049/sms/input?body=np+M+BB1+600
+Completed in 2ms (DB: 655) | 302 Found [http://localhost/sms/?body=np%20M%20BB1%20600]
+  [4;35;1mSQL (328.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (311.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#input (for 127.0.0.1 at 2010-01-31 21:56:04) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+  [4;35;1mCommodity Load (335.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;36;1mMarket Load (321.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB1') LIMIT 1[0m
+  [4;35;1mPrice Columns (321.0ms)[0m   [0mSHOW FIELDS FROM `prices`[0m
+  [4;36;1mCommodity Columns (326.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+
+NameError (undefined local variable or method `market' for #<SmsController:0x56569cc>):
+  app/controllers/sms_controller.rb:81:in `input'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (61.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (326.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (320.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:56:25) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+processing sms: np M BB1 600 from number: 
+Redirected to http://localhost:19049/sms/input?body=np+M+BB1+600
+Completed in 1ms (DB: 646) | 302 Found [http://localhost/sms/?body=np%20M%20BB1%20600]
+  [4;35;1mSQL (328.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (323.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#input (for 127.0.0.1 at 2010-01-31 21:56:28) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+  [4;35;1mCommodity Load (306.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;36;1mMarket Load (305.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB1') LIMIT 1[0m
+  [4;35;1mPrice Columns (327.0ms)[0m   [0mSHOW FIELDS FROM `prices`[0m
+  [4;36;1mCommodity Columns (327.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mMarket Columns (322.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mSQL (328.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPrice Create (327.0ms)[0m   [0mINSERT INTO `prices` (`updated_at`, `commodity_id`, `amount`, `market_id`, `created_at`) VALUES('2010-01-31 14:56:30', 1, 600.0, 1, '2010-01-31 14:56:30')[0m
+  [4;36;1mSQL (324.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCommodity Load (329.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`id` = 1) [0m
+  [4;36;1mMarket Load (325.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`id` = 1) [0m
+
+TypeError (can't convert BigDecimal into String):
+  app/controllers/sms_controller.rb:84:in `+'
+  app/controllers/sms_controller.rb:84:in `input'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (61.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (329.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:56:53) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+processing sms: np M BB1 600 from number: 
+Redirected to http://localhost:19049/sms/input?body=np+M+BB1+600
+Completed in 1ms (DB: 656) | 302 Found [http://localhost/sms/?body=np%20M%20BB1%20600]
+  [4;35;1mSQL (332.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#input (for 127.0.0.1 at 2010-01-31 21:56:55) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+  [4;35;1mCommodity Load (309.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;36;1mMarket Load (321.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB1') LIMIT 1[0m
+  [4;35;1mPrice Columns (323.0ms)[0m   [0mSHOW FIELDS FROM `prices`[0m
+  [4;36;1mCommodity Columns (326.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mMarket Columns (324.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mSQL (328.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPrice Create (326.0ms)[0m   [0mINSERT INTO `prices` (`updated_at`, `commodity_id`, `amount`, `market_id`, `created_at`) VALUES('2010-01-31 14:56:57', 1, 600.0, 1, '2010-01-31 14:56:57')[0m
+  [4;36;1mSQL (324.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCommodity Load (315.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`id` = 1) [0m
+  [4;36;1mMarket Load (310.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`id` = 1) [0m
+
+TypeError (can't convert ActiveSupport::TimeWithZone into String):
+  app/controllers/sms_controller.rb:84:in `+'
+  app/controllers/sms_controller.rb:84:in `input'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  d:/coding/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_load'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/lib/ruby-debug.rb:101:in `debug_program'
+  d:/coding/Ruby/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.4/bin/rdebug-ide:82
+  D:/coding/Ruby/bin/rdebug-ide:19:in `load'
+  D:/coding/Ruby/bin/rdebug-ide:19
+
+Rendered rescues/_trace (136.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (327.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (325.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#index (for 127.0.0.1 at 2010-01-31 21:57:12) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+processing sms: np M BB1 600 from number: 
+Redirected to http://localhost:19049/sms/input?body=np+M+BB1+600
+Completed in 1ms (DB: 652) | 302 Found [http://localhost/sms/?body=np%20M%20BB1%20600]
+  [4;35;1mSQL (373.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (303.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmsController#input (for 127.0.0.1 at 2010-01-31 21:57:14) [GET]
+  Parameters: {"body"=>"np M BB1 600"}
+  [4;35;1mCommodity Load (322.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`code` = 'M') LIMIT 1[0m
+  [4;36;1mMarket Load (325.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`code` = 'BB1') LIMIT 1[0m
+  [4;35;1mPrice Columns (387.0ms)[0m   [0mSHOW FIELDS FROM `prices`[0m
+  [4;36;1mCommodity Columns (409.0ms)[0m   [0;1mSHOW FIELDS FROM `commodities`[0m
+  [4;35;1mMarket Columns (411.0ms)[0m   [0mSHOW FIELDS FROM `markets`[0m
+  [4;36;1mSQL (403.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPrice Create (309.0ms)[0m   [0mINSERT INTO `prices` (`updated_at`, `commodity_id`, `amount`, `market_id`, `created_at`) VALUES('2010-01-31 14:57:17', 1, 600.0, 1, '2010-01-31 14:57:17')[0m
+  [4;36;1mSQL (328.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCommodity Load (384.0ms)[0m   [0mSELECT * FROM `commodities` WHERE (`commodities`.`id` = 1) [0m
+  [4;36;1mMarket Load (410.0ms)[0m   [0;1mSELECT * FROM `markets` WHERE (`markets`.`id` = 1) [0m
+Completed in 3723ms (View: 2, DB: 4364) | 200 OK [http://localhost/sms/input?body=np+M+BB1+600]
